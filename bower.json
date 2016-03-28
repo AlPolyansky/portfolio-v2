@@ -1,0 +1,22 @@
+{
+  "name": "eclerr",
+  "description": "My First Gulp Project",
+  "main": "index.js",
+  "authors": [
+    "Eclerr"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/libs/"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.2",
+    "normalize-css": "^4.0.0"
+  }
+}
