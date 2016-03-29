@@ -1,0 +1,82 @@
+.sidebar
+	width: $widthSidebar
+	min-width: $minWidthSidebar
+	+border($color : $inherit, $size : 2px, $type : solid, $dir : r)
+	display: table-cell
+	vertical-align: top
+	transition: .5s
+	padding: 10px
+	h3
+		position: absolute
+		transition: .5s
+		margin: 0
+		left: 20px
+		+center(false,true)
+		+kerning(2px)
+		font-size: $fzHeader - 5
+		font-weight: 100
+	p,address
+		padding: 0 10%
+	address
+		padding-top: 10px
+		padding-bottom: 10px
+		margin-left: 30px
+		font-style: normal
+		text-transform: uppercase
+		font-size: $fzHeader - 12
+		span
+			cursor: pointer
+	.sidebar-title-warp
+		min-height: 50px
+		width: 100%
+		//+border(red)
+		position: relative
+	.sidebar-wrap
+		//+border(red)
+		.sidebar-avatar-wrap
+			//+border(#333,3px)
+			padding: 30px
+			.sidebar-avatar
+				+centerM()
+				+sq($sizeAvatar)
+				+border($size : 5px, $type : solid)
+				+cir()
+				overflow: hidden
+				img
+					width: 100%
+		.sidebar-about-wrap
+			width: 100%
+			//+border(green,3px)
+			.sidebar-about
+		.sidebar-contacts-wrap
+			width: 100%
+			//+border(blue,3px)
+		.sidebar-skills-wrap
+			+border(tomato,3px)
+			width: 100%
+			.skills-wrap
+				//display: none
+				padding: 0 20px
+				margin: 30px 0
+				white-space: nowrap
+				& > div,i
+					display: inline-block
+					vertical-align: middle
+				.scale
+					position: relative
+					height: 12px
+					width: $widthSidebar * 3.5
+					text-align: right
+					margin: 0 5px
+					.state
+						position: absolute
+						height: 100%
+						width: 20%
+					i
+						position: absolute
+						left: 0
+						top: 0
+
+
+		
+

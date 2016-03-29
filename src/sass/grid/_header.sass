@@ -1,0 +1,32 @@
+header
+	overflow: hidden
+	width: 100%
+	height: $heightHeader
+	line-height: $heightHeader
+	white-space: nowrap
+	font-size: 0
+	font-weight: 100
+	+border($color : $inherit, $size : 2px, $type : solid, $dir : b)
+	.name,.top-menu
+		display: inline-block
+		vertical-align: top
+	.name
+		width: $widthSidebar
+		min-width: $minWidthSidebar
+		h1
+			font-size: $fzHeader
+			text-align: center
+			height: $heightHeader
+			font-weight: 100
+	.top-menu
+		width: 80%
+		font-size: $fzHeader
+		margin-left: -2px
+		li
+			float: left
+			padding: 0 30px
+			cursor: pointer
+			transition: all .1s ease-in-out
+			&:hover
+				transition: all .1s ease-in-out
+

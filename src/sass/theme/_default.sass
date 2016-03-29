@@ -1,0 +1,42 @@
+//header
+header
+	+color($colorMain,$colorBase)
+	font-family: $fontMainBold
+	border-color: $colorExtra
+	li
+		&:hover
+			background-color: $colorExtra
+	.active
+		background-color: $colorExtra
+
+//sidebar
+.sidebar
+	+color($colorExtraLight,$colorBase)
+	border-color: $colorExtra
+	font-family: $fontExtraLight
+	h3
+		font-family: $fontMainBold
+	.sidebar-wrap
+		.sidebar-avatar-wrap
+			.sidebar-avatar
+				border-color : $colorMain
+		.sidebar-skills-wrap
+			.skills-wrap
+				.scale
+					+color($colorExtra)
+					.state
+						background-color: $colorMain
+
+
+//content
+.content-wrap
+	font-family: $fontExtraLight
+	h2
+		font-family: $fontMainBold
+		color: $colorExtra
+.content-wrap .content .light
+	+color($colorBase,$colorExtra)
+.content-wrap .content .dark
+	+color($colorExtra,$colorBase)
+.content-wrap .content .middle
+	+color($colorExtraLight,$colorBase)

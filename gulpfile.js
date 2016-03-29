@@ -90,7 +90,7 @@ gulp.task('browser-sync',function(){
 
 gulp.task('css-libs', ['sass'], function(){
 	return gulp.src([
-		'src/libs/bootsrtap-grid/bootstrap.min.css' //тут пишем пути к css файлам библиотек
+		'src/libs/normalize-css/normalize.css' //тут пишем пути к css файлам библиотек
 	])
 	.pipe(concat('libs.min.css'))
 	.pipe(cssnano())

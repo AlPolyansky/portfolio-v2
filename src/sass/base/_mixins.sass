@@ -1,0 +1,63 @@
+=center($x: true, $y: true)
+  position: absolute
+  @if $x and $y
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+  @else if $x
+    left: 50%
+    transform: translate(-50%, 0)
+  @else if $y
+    top: 50%
+    transform: translate(0, -50%)
+
+=cir($radius : 50%, $rotate : false)
+  border-radius: $radius;
+  @if $rotate
+    transform : rotate($rotate + deg)
+
+
+=rotate($deg)
+  transform : rotate($deg + deg)
+
+
+
+=sq($param : 10px)
+  width: $param
+  height: $param
+
+=kerning($param)
+  letter-spacing: $param
+
+=color($bg : inherit, $color: inherit)
+  background-color: $bg
+  color: $color
+
+=outline($color: red, $size : 1px, $type : solid)
+  outline: $size $type $color
+
+=border($color: inherit, $size : 1px, $type : solid, $dir : false)
+  @if $dir == false
+    border-color: $color
+    border-width: $size
+    border-style:  $type
+  @if $dir == r
+    border-right-color: $color
+    border-right-width: $size
+    border-right-style:  $type
+  @if $dir == l
+    border-left-color: $color
+    border-left-width: $size
+    border-left-style:  $type
+  @if $dir == t
+    border-top-color: $color
+    border-top-width: $size
+    border-top-style:  $type
+  @if $dir == b
+    border-bottom-color: $color
+    border-bottom-width: $size
+    border-bottom-style:  $type
+
+=centerM($param : 0)
+  margin: $param auto
+
