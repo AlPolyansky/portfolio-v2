@@ -1,3 +1,11 @@
+$colorMain 			: #00B9EE
+$colorExtra			: #333
+$colorExtraLight	: lighten($colorExtra,20%)
+$colorBase			: #fff
+
+
+
+
 //header
 header
 	+color($colorMain,$colorBase)
@@ -26,6 +34,22 @@ header
 					+color($colorExtra)
 					.state
 						background-color: $colorMain
+	input,textarea
+		background-color: lighten($colorExtra,5%)
+		border: 2px solid $colorMain
+		color: $colorBase
+	.form-error
+		color: #B83535
+		font-family: $fontExtraBold
+
+
+
+
+
+
+
+
+
 
 
 //content

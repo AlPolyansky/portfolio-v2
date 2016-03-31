@@ -10,49 +10,83 @@ a
 ul
 	padding: 0
 	margin: 0
-#wrapper
-	overflow: hidden
 
-#wrapper .content-wrap .hide
-  transform: translateX(-100%)
+input,textarea
+	&:focus
+		outline: none
 
-#wrapper .content-wrap .content-total
-  transform: translateX(-25%)
-  width: 145%
 
-#wrapper .content-wrap .sidebar-total
-  width: 100%
-  h3
-  	transition: .5s
-  	+center(true,true)
-  .sidebar-wrap
-  	.sidebar-avatar-wrap
-  		.sidebar-avatar
-  			+sq($sizeAvatar * 1.5)
-  			transition: .2s
-  	.sidebar-about-wrap
-  		+centerM()
-  		width: 50%
-  		padding-bottom: 60px
-  		//text-align: justify
-  .sidebar-contacts-wrap
-  	padding-bottom: 60px
-  	width: 50%
-  	+centerM()
-  	text-align: center
-  	address
-  		display: inline-block
-  		margin: 0
-  .sidebar-skills-wrap
-  	width: 50%
-  	+centerM()
-  	text-align: center
-  	.skills-wrap
-  		.scale
-  			height: 20px
-#wrapper .absolute
-  z-index: -100;
-  position: absolute
+
+.hide
+  margin-left: -250px
+
+.total
+  width: 100%!important
+
+
+.absolute
+  z-index: -100!important
+  position: absolute!important
+
+
+.transition-none
+  transition: none!important
+
+
+
+
+
+
+
+
+
+#wrapper .content-wrap .total
+	h3
+		font-size: 25px
+		+center(true,true)
+	.sidebar-wrap
+		width: 50%
+		min-width: 400px
+		+centerM()
+		+border()
+		&>div
+			margin-bottom: 60px
+		.sidebar-title-warp
+			i
+				display: none
+		.sidebar-avatar-wrap
+			.sidebar-avatar
+				+sq($sizeAvatar /2)
+				transition: .2s
+				max-width: 200px
+		.sidebar-about-wrap
+			+centerM()
+			padding-bottom: 60px
+			text-align: justify
+	.sidebar-contacts-wrap
+		padding-bottom: 60px
+		+centerM()
+		text-align: center
+		address
+			display: inline-block
+			margin: 0
+	.sidebar-skills-wrap
+		+centerM()
+		text-align: center
+		.skills-wrap
+			font-size: 16px
+			.skills-name
+				display: block
+				margin: 10px
+			.scale
+				height: 22px
+				.amount
+					right: -50px
+	.sidebar-form-wrap
+		display: block
+
+		
+
 
 
 
