@@ -3,11 +3,15 @@
 	width: $widthSidebar
 	white-space: normal
 	vertical-align: top
+	position: absolute
 	+border($color : $inherit, $size : 2px, $type : solid, $dir : r)
 	transition: .5s
 	font-size: 14px
 	display: inline-block
 	overflow: hidden
+	height: 100%
+	left: -250px
+	z-index: 100
 	h3
 		transition: .5s
 		margin: 0
@@ -16,17 +20,27 @@
 		+kerning(2px)
 		font-size: $fzHeader - 5
 		font-weight: 100
+		i
+			vertical-align: middle
+			font-size: 26px
 	p,address
 		padding: 0 10px
 	address
 		padding-top: 10px
 		padding-bottom: 10px
-		margin-left: 30px
+		margin-left: 50px
 		font-style: normal
 		text-transform: uppercase
 		font-size: $fzHeader - 12
+		a
+			cursor: pointer
 		span
 			cursor: pointer
+		i
+			vertical-align: middle
+			font-size: 24px
+			position: relative
+			right: 10px
 	.sidebar-title-warp
 		min-height: 50px
 		width: 100%
@@ -44,6 +58,7 @@
 				+cir()
 				overflow: hidden
 				max-width: 170px
+				max-height: 170px
 				img
 					width: 100%
 		.sidebar-about-wrap
@@ -58,6 +73,8 @@
 				margin: 30px 0
 				white-space: nowrap
 				text-align: center
+				&:nth-child(n+5)
+					display: none
 				.skill-name
 					display: none
 				.scale
@@ -74,11 +91,11 @@
 					i
 						position: absolute
 						+center(false,true)
-						left: -30px
+						left: -40px
 						z-index: 2
 					.amount
 						+center(false,true)
-						right: -35px
+						right: -45px
 						top: 6px
 		.sidebar-form-wrap
 			display: none
@@ -88,28 +105,36 @@
 				text-align: center
 				.input-wrap
 					+centerM
-					width: 45%
+					width: 60%
+					text-align: right
+					.wrap
+						text-align: left
 					input,textarea
 						display: block
 						width: 100%
-						//min-width: 200px
 						padding: 15px 30px
 						font-size: 16px
+						margin: 20px 0
 					textarea
-						margin: 0
 						resize: none
 						min-height: 200px
 					.form-error
-						text-align: left
-						padding-left: 20px
-						display: inline-block
-						margin: 0 auto
 						width: 100%
-						height: 60px
-						line-height: 60px
 						text-transform: uppercase
 						font-size: 14px
 						+kerning(1px)
+					.pl-holder
+						font-size: 16px
+						width: 100%
+						margin: 10px
+						display: block
+						text-transform: uppercase
+						+kerning(1px)
+				button
+					height: 25px
+					width: 150px
+					text-align: center
+					margin: 20px 0
 
 
 

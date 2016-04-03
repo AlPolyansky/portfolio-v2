@@ -3,27 +3,41 @@
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
 	/**/
-	
+	.dotts-wrap
+				opacity: 0!important
+	body header .top-menu
+		display: none
+	#wrapper
+		.content-wrap
+			.content
+				.jobs-prev
+					width: 100%
+	body footer .footer-galery
+		display: none
+
+	body #wrapper footer
+		&>div
+			width: 100%
+
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
 	/**/
-	#wrapper
-		.content-wrap
-			.sidebar
-				//display: none
-			.content-total
-				//transform: translateX(0%)
-				//width: 100%
+
+
+			
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
 	/**/
 	
+	
+	
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
 	/**/
-
+	body #wrapper .content-wrap .total .sidebar-wrap
+		width: 100%
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
@@ -45,7 +59,9 @@
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px)
 	/**/
-
+	body #wrapper .total-sidebar
+				.sidebar-wrap
+					width: 50%
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px)
@@ -53,5 +69,14 @@
 
 
 /* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px)
+@media only screen and (min-width : 1201px)
 	/**/
+	body .mobile-menu-botton
+		display: none
+	#wrapper
+		.content-wrap
+			.sidebar
+				left: 0
+			
+	
+	

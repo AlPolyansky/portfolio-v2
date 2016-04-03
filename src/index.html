@@ -3,10 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
 	<link rel="stylesheet" href="css/libs.min.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+	<div class="success">
+		<p>отправлено</p>
+	</div>
+	<div class="preloader">
+		<div class="loading"></div>
+	</div>
+	<div class="mobile-menu">
+		<ul>
+			<li data-button="project">Проекты</li>
+			<li data-button="about">О себе</li>
+		</ul>
+	</div>
 	<div id="wrapper">
 		<header>
 			<div class="name">
@@ -17,6 +30,10 @@
 					<li data-button="project" class="active">Проекты</li>
 					<li data-button="about">О себе</li>
 				</ul>
+			</div>
+			<div class="mobile-menu-botton">
+				<div class="top-line"></div>
+				<div class="down-line"></div>
 			</div>
 		</header>
 		<div class="content-wrap">
@@ -30,7 +47,7 @@
 					<div class="sidebar-about-wrap">
 						<div class="sidebar-about">
 							<div class="sidebar-title-warp">
-								<h3><i>A </i>О себе</h3>
+								<h3><i class="icons i_person"></i>О себе</h3>
 							</div>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid porro debitis, quibusdam asperiores nam incidunt! Adipisci accusamus, at nobis deleniti atque ratione doloremque sint quo soluta neque excepturi quibusdam aperiam.</p>
 						</div>
@@ -38,61 +55,94 @@
 					<div class="sidebar-contacts-wrap">
 						<div class="sidebar-contacts">
 							<div class="sidebar-title-warp">
-								<h3><i>A </i>Контакты</h3>
+								<h3><i class="icons i_mail"></i>Контакты</h3>
 							</div>
-							<address><i>A </i><span id="email">e-mail</span></address>
-							<address><i>A </i><a href="https://vk.com/id19473263" target="_blank">вконтакте</a></address>
-							<address><i>A </i><a href="https://github.com" target="_blank">github</a></address>
-							<address><i>A </i><a href="http://codepen.io/Eclerr" target="_blank">codepen</a></address>
+							<address><i class="icons i_dog"></i><a data-button="email">e-mail</a></address>
+							<address><i class="icons i_vk"></i><a href="https://vk.com/id19473263" target="_blank">вконтакте</a></address>
+							<address><i class="icons i_git"></i><a href="https://github.com" target="_blank">github</a></address>
+							<address><i class="icons i_codepen"></i><a href="http://codepen.io/Eclerr" target="_blank">codepen</a></address>
 						</div>
 					</div>
 					<div class="sidebar-skills-wrap">
 						<div class="sidebar-title-warp">
-								<h3><i>A </i>Навыки</h3>
+								<h3><i class="icons i_arrow"></i>Навыки</h3>
 						</div>
 							<div class="skills-wrap">
 								<p class="skill-name">HTML</p>
 								<div class="scale">
-									<i>A</i>
+									<i class="icons i_html"></i>
 									<div class="state"></div>
-									<div class="amount"><span>1<span>/10</div>
+									<div class="amount"><span>1</span>/10</div>
 								</div>
 							</div>
 							<div class="skills-wrap">
-								<p class="skill-name">HTML</p>
+								<p class="skill-name">CSS</p>
 								<div class="scale">
-									<i>A</i>
+									<i class="icons i_css"></i>
 									<div class="state"></div>
-									<div class="amount"><span>1<span>/10</div>
+									<div class="amount"><span>10</span>/10</div>
 								</div>
 							</div>
 							<div class="skills-wrap">
-								<p class="skill-name">HTML</p>
+								<p class="skill-name">JS</p>
 								<div class="scale">
-									<i>A</i>
+									<i class="icons i_js"></i>
 									<div class="state"></div>
-									<div class="amount"><span>1<span>/10</div>
+									<div class="amount"><span>4</span>/10</div>
+								</div>
+							</div>
+							<div class="skills-wrap">
+								<p class="skill-name">JS</p>
+								<div class="scale">
+									<i class="icons i_js"></i>
+									<div class="state"></div>
+									<div class="amount"><span>4</span>/10</div>
+								</div>
+							</div>
+							<div class="skills-wrap">
+								<p class="skill-name">JS</p>
+								<div class="scale">
+									<i class="icons i_js"></i>
+									<div class="state"></div>
+									<div class="amount"><span>4</span>/10</div>
+								</div>
+							</div>
+							<div class="skills-wrap">
+								<p class="skill-name">JS</p>
+								<div class="scale">
+									<i class="icons i_js"></i>
+									<div class="state"></div>
+									<div class="amount"><span>7</span>/10</div>
 								</div>
 							</div>
 					</div>
 					<div class="sidebar-form-wrap">
 						<div class="sidebar-title-warp">
-								<h3>Связаться со мной</h3>
+								<h3 id="email-address">Связаться со мной</h3>
 						</div>
 						<form action="#" method="POST">
 							<div class="input-wrap">
-								<input type="text" placeholder="Ваше имя" autocomplete="off" name="name">
-								<span class="form-error" data-input="name">Вы не ввели email</span>
+								<div class="wrap">
+									<span class="pl-holder">Ваше имя</span>
+								</div>
+								<input type="text" placeholder="Ваше имя" autocomplete="off" name="name" id="name">
+								<span class="form-error" data-input="name" ></span>
 							</div>
 							<div class="input-wrap">
-								<input type="text" placeholder="Ваш E-mail" autocomplete="off" name="email">
-								<span class="form-error" data-input="email">Вы не ввели email</span>
+								<div class="wrap">
+									<span class="pl-holder">Ваш E-mail</span>
+								</div>
+								<input type="text" placeholder="Ваш E-mail" autocomplete="off" name="email" id="email">
+								<span class="form-error" data-input="email"></span>
 							</div>
 							<div class="input-wrap">
-								<textarea placeholder="Ваше сообщение" name="text"></textarea>
-								<span class="form-error" data-input="text">Вы не ввели email</span>
+								<div class="wrap">
+									<span class="pl-holder">Сообщение</span>
+								</div>
+								<textarea placeholder="Ваше сообщение" name="text" id="text"></textarea>
+								<span class="form-error" data-input="text"></span>
 							</div>
-							<button></button>
+							<button> Отправить</button>
 						</form>
 					</div>
 				</div>
@@ -100,13 +150,94 @@
 			<div class="content">
 				<section class="jobs-prev">
 					<h2>Готовые Проекты</h2>
+					<div class="jobs-prev-wrap">
+						<div class="job-img-wrap">
+							<div class="job-content-cloth">
+								<div class="job-content">
+									<h3>Работа</h3>
+									<a href="#">Подробнее</a>
+								</div>
+							</div>
+							<img src="img/avatar.jpg" alt="Работа">
+						</div>
+						<div class="job-img-wrap">
+							<div class="job-content-cloth">
+								<div class="job-content">
+									<h3>Работа</h3>
+									<a href="#">Подробнее</a>
+								</div>
+							</div>
+							<img src="img/avatar.jpg" alt="Работа">
+						</div>
+					</div>
 				</section>
-				<section class="jobs dark">
-					Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Меня ты своих семь жизни за рыбного обеспечивает города ipsum текстов безопасную грамматики журчит запятых если всемогущая запятой это, залетают.
+				<section class="jobs">
+					<div class="jobs-more-img">
+						<img src="img/avatar.jpg" alt="Работа">
+					</div>
+					<h4><a href="#" target="_blank">Bildersite</a></h4>
+					<div class="jobs-about">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati perspiciatis, modi. Cupiditate sint aspernatur quia, blanditiis distinctio, a modi quasi nulla. Iure, deleniti dolor quae aliquid commodi suscipit temporibus placeat!</p>
+					</div>
+					<div class="jobs-galery">
+						<a href="img/avatar.jpg" class="galery-item">
+							<img src="img/avatar.jpg" alt="Работа">
+							<div class="galery-img-cloth">
+								<i class="icons i_zoom"></i>
+							</div>
+						</a>
+					</div>
+				</section>
+				<section class="jobs">
+					<div class="jobs-more-img">
+						<img src="img/avatar.jpg" alt="Работа">
+					</div>
+					<h4><a href="#" target="_blank">Bildersite</a></h4>
+					<div class="jobs-about">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati perspiciatis, modi. Cupiditate sint aspernatur quia, blanditiis distinctio, a modi quasi nulla. Iure, deleniti dolor quae aliquid commodi suscipit temporibus placeat!</p>
+					</div>
+					<div class="jobs-galery">
+						<a href="img/avatar.jpg" class="galery-item">
+							<img src="img/avatar.jpg" alt="Работа">
+							<div class="galery-img-cloth">
+								<i class="icons i_zoom"></i>
+							</div>
+						</a>
+						<a href="img/avatar.jpg" class="galery-item">
+							<img src="img/avatar.jpg" alt="Работа">
+							<div class="galery-img-cloth">
+								<i class="icons i_zoom"></i>
+							</div>
+						</a>
+					</div>
 				</section>
 			</div>
 		</div>
-		<footer>123</footer>
+		<footer>
+			<span id="up" class="icons i_up"></span>
+			<div class="footer-name">
+				<h5>Alexander Polyansky</h5>
+			</div>
+			<div class="footer-galery">
+				<div class="footer-galery-wrap">
+					<div class="wrap">
+						<div class="footer-galery-item">
+							<img src="img/avatar.jpg" alt="Работа">
+							<a href="#" class="galery-img-cloth">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-contacts">
+				<div class="wrap">
+					<address><span data-button="email"><i class="icons i_dog"></i></span></address>
+					<address><a href="https://vk.com/id19473263" target="_blank"><i class="icons i_vk"></i></a></address>
+					<address><a href="https://github.com" target="_blank"><i class="icons i_git"></i></a></address>
+					<address><a href="http://codepen.io/Eclerr" target="_blank"><i class="icons i_codepen"></i></a></address>
+				</div>
+			</div>
+		</footer>
 	</div>
 <script src="js/libs.min.js"></script>
 <script src="js/common.js"></script>

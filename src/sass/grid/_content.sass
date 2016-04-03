@@ -4,20 +4,120 @@
 	position: relative
 	white-space: nowrap
 	font-size: 0
+	display: table
 	.content
 		min-height: 100vw
-		width: calc(100% - 250px)
-		transition: .5s
+		//width: calc(100% - #{$widthSidebar})
+		width: 100%
+		
 		font-size: 14px
-		display: inline-block
 		overflow: hidden
 		white-space: normal
+		float: right;
 		.jobs-prev
+			transition: .5s
+			width: calc(100% - #{$widthSidebar})
+			float: right
 			min-height: $minHeightJobsPrev
 			h2
 				text-align: center
 				font-size: $fzSectionH2
 				margin-top: 80px
 				font-weight: normal
+			.jobs-prev-wrap
+				text-align: center
+				.job-img-wrap
+					display: inline-block
+					overflow: hidden
+					width: 250px
+					height: 200px
+					margin: 20px
+					position: relative
+					&:hover .job-content-cloth
+						opacity: 1
+						transition: all .5s ease
+					&:hover .job-content-cloth .job-content
+						transition: all .5s ease
+						top: 40%
+					.job-content-cloth
+						transition: all .5s ease
+						opacity: 0
+						position: absolute
+						width: 100%
+						height: 100%
+						z-index: 100
+						.job-content
+							transition: all .5s ease
+							+center()
+							top: 45%
+							h3
+								font-size: 20px
+								margin-bottom: 30px
+								+kerning(1px)
+							a
+								border-width: 2px
+								border-style: solid
+								padding: 5px 10px
+								text-transform: uppercase
+								+kerning(1.5px)
+					img
+						width: 100%
+						+center(true,true)
 		.jobs
+			clear: both
 			min-height: $minHeightJobsPrev
+			overflow: hidden
+			text-align: center
+			h4
+				margin: 0
+				padding: 0
+				a
+					text-transform: uppercase
+					font-size: 25px
+					+kerning(1px)
+					&:hover
+						text-decoration: none
+		.jobs-more-img
+			+centerM()
+			+cir()
+			height: 170px
+			width: 170px
+			overflow: hidden
+			margin-top: 50px
+			margin-bottom: 50px
+			img
+				width: 100%
+		.jobs-about
+			+centerM()
+			text-align: justify
+			width: 60%
+			margin-top: 50px
+			margin-bottom: 50px
+			font-size: 16px
+		.jobs-galery
+			text-align: center
+			margin-bottom: 120px
+			.galery-item
+				margin: 20px
+				height: 100px
+				width: 150px
+				display: inline-block
+				overflow: hidden
+				position: relative
+				cursor: pointer
+				img
+					width: 100%
+					+center()
+				&:hover .galery-img-cloth
+					opacity: 1
+					transition: .3s
+				.galery-img-cloth
+					transition: .3s
+					height: 100%
+					width: 100%
+					position: absolute
+					opacity: 0
+					i
+						+center
+						font-style: normal
+

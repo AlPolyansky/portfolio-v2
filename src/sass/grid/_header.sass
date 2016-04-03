@@ -6,6 +6,7 @@ header
 	white-space: nowrap
 	font-size: 0
 	font-weight: 100
+	position: relative
 	+border($color : $inherit, $size : 2px, $type : solid, $dir : b)
 	.name,.top-menu
 		display: inline-block
@@ -29,4 +30,64 @@ header
 			transition: all .1s ease-in-out
 			&:hover
 				transition: all .1s ease-in-out
+.mobile-menu-botton
+	cursor: pointer
+	z-index: 10000
+	display: block
+	+sq(35px)
+	+center(false)
+	right: 25px
+	&>div
+		background-color: #FFF
+		height: 3px
+		width: 70%
+		margin: 0
+		padding: 0
+		position: absolute;
+		bottom: 16px
+		left: 5px
+		transition: .3s ease-in-out
+	.top-line
+		bottom: 20px
+	.down-line
+		bottom: 10px
+		
+		
+.open
+	.top-line
+		transform: rotate(-45deg)
+		bottom: 16px
+	.down-line
+		transform: rotate(225deg)
+		bottom: 16px
+.mobile-menu
+	position: fixed
+	font-family: $fontMainBold
+	font-size: 25px
+	opacity: 0
+	background-color: rgba(red,.5)
+	height: 100%
+	width: 100%
+	transition: .5s
+	z-index: -1
+	ul
+		margin-top: $heightHeader
+		text-transform: uppercase
+		text-align: center
+		+kerning(1px)
+		+center(true,false)
+		width: 100%
+		li
+			cursor: pointer
+			width: 100%
+			margin: 20px 0
+			transition: .1s
+			padding: 10px
+				
+.menu-opacity
+	opacity: 1
+	z-index: 1000
+	transition: .5s
+
+
 

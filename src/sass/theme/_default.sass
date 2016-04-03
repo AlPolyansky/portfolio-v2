@@ -2,21 +2,33 @@ $colorMain 			: #00B9EE
 $colorExtra			: #333
 $colorExtraLight	: lighten($colorExtra,20%)
 $colorBase			: #fff
+$colorBase2			: #000
 
 
 
+.mobile-menu
+		+color(rgba($colorBase2,.8),$colorBase)
+		ul
+			li
+				&:hover
+					background-color: rgba($colorBase2,.2)
 
+.success
+	+color(rgba($colorBase2,.9),$colorBase)
 //header
 header
 	+color($colorMain,$colorBase)
 	font-family: $fontMainBold
 	border-color: $colorExtra
-	li
-		&:hover
-			background-color: $colorExtra
+	.top-menu
+		li
+			&:hover
+				background-color: $colorExtra
 	.active
 		background-color: $colorExtra
-
+	.mobile-menu-botton
+		background-color: $colorExtra
+		
 //sidebar
 .sidebar
 	+color($colorExtraLight,$colorBase)
@@ -32,6 +44,7 @@ header
 			.skills-wrap
 				.scale
 					+color($colorExtra)
+					left: -10px
 					.state
 						background-color: $colorMain
 	input,textarea
@@ -41,14 +54,13 @@ header
 	.form-error
 		color: #B83535
 		font-family: $fontExtraBold
-
-
-
-
-
-
-
-
+	.inputError
+		border-color: #B83535
+	button
+		background-color: lighten($colorExtra,5%)
+		border: 2px solid $colorMain
+		color: $colorBase
+		text-transform: uppercase
 
 
 
@@ -59,8 +71,50 @@ header
 		font-family: $fontMainBold
 		color: $colorExtra
 .content-wrap .content .light
-	+color($colorBase,$colorExtra)
+	+color(darken($colorBase,1%),$colorExtra)
+	font-family: $fontExtraRegular
+	a
+		color: $colorExtra
+	i
+		color: $colorBase
 .content-wrap .content .dark
 	+color($colorExtra,$colorBase)
 .content-wrap .content .middle
 	+color($colorExtraLight,$colorBase)
+.job-img-wrap
+	+border($colorExtra,2px)
+.job-content-cloth
+	+color(rgba($colorBase2	,.7),$colorBase)
+	h3
+		font-family: $fontMainBold
+	a
+		border-color: $colorMain
+		font-family: $fontMainBold
+.jobs-more-img
+	+border($colorMain,5px)
+.jobs
+	h4 
+		a
+			font-family: $fontMainBold
+			text-decoration: underline
+	.jobs-galery
+		.galery-item
+			+border($colorExtra,1px)
+			.galery-img-cloth
+				background-color: rgba($colorBase2, .7)
+#cap
+	color: $colorMain
+
+
+//footer
+footer
+	+color(lighten($colorBase2,5%),$colorBase)
+	&>.icons
+		color : lighten($colorBase2,5%)
+	.footer-name
+		h5
+			font-family: $fontMainBold
+	.footer-galery-item
+		+border($colorBase)
+	.galery-img-cloth
+		background-color: rgba($colorBase, .2)

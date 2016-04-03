@@ -5,7 +5,7 @@ li
 h1
 	margin: 0
 a
-	color: $colorBase
+	color: #fff
 	text-decoration: none
 ul
 	padding: 0
@@ -14,17 +14,19 @@ ul
 input,textarea
 	&:focus
 		outline: none
+#wrapper
+	overflow: hidden
 
 
 
 .hide
-  margin-left: -250px
+  left: -$widthSidebar!important
 
 .total
   width: 100%!important
 
 
-.absolute
+.content-absolute
   z-index: -100!important
   position: absolute!important
 
@@ -32,6 +34,16 @@ input,textarea
 .transition-none
   transition: none!important
 
+.total-sidebar
+	width: 100%!important
+	z-index: 1000!important
+	left: 0!important
+	position: static!important
+.none
+	display: none!important
+
+body .opacity
+	opacity: 1
 
 
 
@@ -40,15 +52,13 @@ input,textarea
 
 
 
-#wrapper .content-wrap .total
+
+#wrapper .content-wrap .total-sidebar
 	h3
 		font-size: 25px
 		+center(true,true)
 	.sidebar-wrap
-		width: 50%
-		min-width: 400px
 		+centerM()
-		+border()
 		&>div
 			margin-bottom: 60px
 		.sidebar-title-warp
@@ -56,9 +66,9 @@ input,textarea
 				display: none
 		.sidebar-avatar-wrap
 			.sidebar-avatar
-				+sq($sizeAvatar /2)
 				transition: .2s
 				max-width: 200px
+				max-height: 200px
 		.sidebar-about-wrap
 			+centerM()
 			padding-bottom: 60px
@@ -70,20 +80,146 @@ input,textarea
 		address
 			display: inline-block
 			margin: 0
+			i
+				font-size: 35px
 	.sidebar-skills-wrap
 		+centerM()
 		text-align: center
 		.skills-wrap
 			font-size: 16px
-			.skills-name
+			&:nth-child(n)
+				display: block
+			.skill-name
 				display: block
 				margin: 10px
 			.scale
 				height: 22px
+				i
+					font-size: 45px
+					left: -50px
 				.amount
-					right: -50px
+					right: -60px
 	.sidebar-form-wrap
 		display: block
+.dotts-wrap
+	position: fixed
+	right: 0
+	z-index: 10000
+	top: 50%
+	opacity: 1
+	transform: translateY(-50%)
+	transition: .3s
+	.dots-active
+		background-color: $colorMain
+.dott
+	+cir()
+	border: 2px solid $colorMain
+	width: 16px
+	height: 16px
+	display: block
+	margin: 6px auto
+	cursor: pointer
+	transition: .2s
+	&:hover
+		background-color: rgba($colorMain,.3)
+		transition: .2s
+#cap
+	position: relative
+	top: 5px
+	cursor: pointer
+.dotts-wrap-hide
+	opacity: 0
+	transition: .3s
+
+
+
+.preloader
+  background: none repeat scroll 0 0 #00B9EE
+  bottom: 0
+  height: 100%
+  left: 0
+  position: fixed
+  right: 0
+  top: 0
+  width: 100%
+  z-index: 9999
+  text-align: center
+  z-index: 10000
+  .loading,
+  .loading::before,
+  .loading::after
+    position: absolute
+    border: 1px solid rgba(255, 255, 255, 0.5)
+    border-left: 2px solid rgba(255, 255, 255, 1)
+    -webkit-border-radius: 999px
+    -moz-border-radius: 999px
+    border-radius: 999px
+  .loading
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    margin: auto
+    height: 50px
+    width: 50px
+    -webkit-animation: animation-rotate 1000ms linear infinite
+    -moz-animation: animation-rotate 1000ms linear infinite
+    -o-animation: animation-rotate 1000ms linear infinite
+    animation: animation-rotate 1000ms linear infinite
+  .loading::before
+    top: 50%
+    content: ""
+    margin: -23px 0 0 -23px
+    height: 44px
+    width: 44px
+    -webkit-animation: animation-rotate 1000ms linear infinite
+    -moz-animation: animation-rotate 1000ms linear infinite
+    -o-animation: animation-rotate 1000ms linear infinite
+    animation: animation-rotate 1000ms linear infinite
+  .loading::after
+    top: 50%
+    content: ""
+    margin: -29px 0 0 -29px
+    height: 56px
+    width: 56px
+    -webkit-animation: animation-rotate 2000ms linear infinite
+    -moz-animation: animation-rotate 2000ms linear infinite
+    -o-animation: animation-rotate 2000ms linear infinite
+    animation: animation-rotate 2000ms linear infinite
+  @-webkit-keyframes animation-rotate
+    100%
+      -webkit-transform: rotate(360deg)
+
+  @-moz-keyframes animation-rotate
+    100%
+      -moz-transform: rotate(360deg)
+
+  @-o-keyframes animation-rotate
+    100%
+      -o-transform: rotate(360deg)
+
+  @keyframes animation-rotate
+    100%
+      transform: rotate(360deg)
+
+
+.success
+	+center()
+	z-index: 100000000
+	height: 100%
+	width: 100%
+	position: fixed
+	display: none
+	p
+		text-transform: uppercase
+		+center()
+		top: 35%
+		text-transform: uppercase
+		font-family: $fontExtraLight
+		font-weight: 100
+		+kerning(2px)
+		font-size: 40px
+
 
 		
 
