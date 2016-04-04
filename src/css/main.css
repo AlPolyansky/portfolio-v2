@@ -266,6 +266,7 @@ body .opacity {
     max-width: 200px;
     max-height: 200px; }
   #wrapper .content-wrap .total-sidebar .sidebar-wrap .sidebar-about-wrap {
+    font-size: 16px;
     margin: 0 auto;
     padding-bottom: 60px;
     text-align: justify; }
@@ -279,6 +280,8 @@ body .opacity {
     margin: 0; }
     #wrapper .content-wrap .total-sidebar .sidebar-contacts-wrap address i {
       font-size: 35px; }
+    #wrapper .content-wrap .total-sidebar .sidebar-contacts-wrap address:hover {
+      text-decoration: underline; }
 
 #wrapper .content-wrap .total-sidebar .sidebar-skills-wrap {
   margin: 0 auto;

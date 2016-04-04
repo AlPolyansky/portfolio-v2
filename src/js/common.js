@@ -128,9 +128,14 @@ $mobileMenu.find("li").click(function(){
 
 
 
-
+var str = $(".sidebar-about").find("p").text();
   
-
+function readMore(){
+  if(str.length > 300){
+    var slice = str.slice(0,200) + "...";
+    $(".sidebar-about").find("p").text(slice);
+  }
+}
 
 
 
@@ -141,6 +146,12 @@ $("[data-button=about] , [data-button=email]").on("click",function(){
   sidebarAnimation(totalSidebar);
   $topMenuLi.removeClass("active");
   $(".top-menu [data-button=about]").addClass("active");
+
+
+  
+  $(".sidebar-about").find("p").text(str);
+
+
 });
 
 
@@ -149,6 +160,11 @@ $("[data-button=project]").on("click",function(){
   $(".footer-galery-item").removeClass("none");
   $topMenuLi.removeClass("active");
   $(".top-menu [data-button=project]").addClass("active");
+
+  if(str.length > 300){
+    var slice = str.slice(0,200) + "...";
+    $(".sidebar-about").find("p").text(slice);
+  }
 
   if($(window).width() <= devSize){
     sidebarAnimation("hide");
@@ -281,7 +297,7 @@ function calcSkills(){
   addColorSection();
   addPopUpManager();
   ajaxForm();
-
+  readMore();
   calcSkills();
 
 
