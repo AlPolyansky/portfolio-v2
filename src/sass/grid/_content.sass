@@ -7,9 +7,7 @@
 	display: table
 	.content
 		min-height: 100vw
-		//width: calc(100% - #{$widthSidebar})
 		width: 100%
-		
 		font-size: 14px
 		overflow: hidden
 		white-space: normal
@@ -61,7 +59,7 @@
 								text-transform: uppercase
 								+kerning(1.5px)
 					img
-						width: 100%
+						width: 150%
 						+center(true,true)
 		.jobs
 			clear: both
@@ -85,11 +83,14 @@
 			overflow: hidden
 			margin-top: 50px
 			margin-bottom: 50px
+			position: relative
 			img
-				width: 100%
+				width: 200%
+				+cir()
+				+center()
 		.jobs-about
 			+centerM()
-			text-align: justify
+			text-align: center
 			width: 60%
 			margin-top: 50px
 			margin-bottom: 50px

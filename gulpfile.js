@@ -71,7 +71,9 @@ gulp.task('sass',function(){
 
 gulp.task('scripts', function(){
 	return gulp.src([
-		'src/libs/jquery/dist/jquery.min.js', //тут пишем пути к js файлам библиотек
+		'src/libs/jquery/dist/jquery.min.js',
+		'src/libs/magnific-popup/dist/jquery.magnific-popup.js',
+		'src/libs/scrolldots/scrolldots.js' //тут пишем пути к js файлам библиотек
 	])
 	.pipe(concat('libs.min.js'))
 	.pipe(uglify())
@@ -90,7 +92,9 @@ gulp.task('browser-sync',function(){
 
 gulp.task('css-libs', ['sass'], function(){
 	return gulp.src([
-		'src/libs/normalize-css/normalize.css' //тут пишем пути к css файлам библиотек
+		'src/libs/normalize-css/normalize.css',
+		'src/libs/magnific-popup/dist/magnific-popup.css'
+		 //тут пишем пути к css файлам библиотек
 	])
 	.pipe(concat('libs.min.css'))
 	.pipe(cssnano())
